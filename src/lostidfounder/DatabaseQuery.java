@@ -29,7 +29,7 @@ public class DatabaseQuery {
               Connection con = DriverManager.getConnection(location, "root", "");
               return con;
           }
-          catch(Exception ex){
+          catch(SQLException ex){
             System.out.println("ecxeption" +ex);
           }     
         return null;
@@ -58,19 +58,14 @@ public class DatabaseQuery {
                    pass = rs.getString("password");
                    System.out.println(pass);
                    
-                   if(pass.equals(password)){
-                       return true;
-                   }
-                   else{
-                       return false;
-                   }
+                return pass.equals(password);
                    
                    
               }
             
         }
         
-        catch(Exception ex){
+        catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "invalid account name");
             System.out.println("ecxeption" +ex);
             
@@ -107,7 +102,7 @@ public class DatabaseQuery {
             
         
         
-        catch(Exception ex){
+        catch(SQLException ex){
             System.out.println("ecxeption" +ex);
             JOptionPane.showMessageDialog(null, ex.toString());
             
@@ -204,7 +199,7 @@ public class DatabaseQuery {
             
         }
         
-        catch(Exception ex){
+        catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "error");
             System.out.println("ecxeption" +ex);
             
@@ -272,7 +267,7 @@ public class DatabaseQuery {
             
         }
         
-        catch(Exception ex){
+        catch(SQLException ex){
             System.out.println("ecxeption" +ex);
             
             } 
