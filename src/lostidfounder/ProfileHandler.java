@@ -17,9 +17,8 @@ public class ProfileHandler {
     
     public boolean logIn(String username, String password){
         DatabaseQuery db=new DatabaseQuery();
-        try {
-            boolean ff= db.isValid(username, password);
-            return ff;
+        try { 
+            return db.isValid(username, password);
             
         } 
         catch (SQLException ex) {
