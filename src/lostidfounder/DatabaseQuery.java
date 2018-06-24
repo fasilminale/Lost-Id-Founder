@@ -100,9 +100,9 @@ public class DatabaseQuery {
             ps.setString(2,mName);
             ps.setString(3,lName);
             ps.setString(4,studentId);
+            JOptionPane.showMessageDialog(null, "nice man! keep coding");
             
-            
-               
+                
          }
             
         
